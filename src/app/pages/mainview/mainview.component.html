@@ -1,0 +1,71 @@
+<div class="root">
+  <div class="navbar has-background-dark">
+    <div class="navbar-brand">
+        <div class="navbar-item">
+            <h1 class="app-name has-gradient-text">
+                Drag and Drop Cards
+            </h1>
+        </div>
+    </div>
+  </div>
+  <div class="board">
+    <div class="board-bar">
+        <p class="board-name">
+            Board Name
+        </p>
+    </div>
+    <div class="board-wraper">
+        <div class="board-columns" cdkDropListGroup>
+           <div class="board-column">
+            <div class="columntitle">
+                Todo
+            </div>
+            <div class="tasks-container" cdkDropList
+      [cdkDropListData]="todo"
+      (cdkDropListDropped)="drop($event)">
+                <div *ngFor="let item of todo" class="task" cdkDrag>
+                    {{item}}
+                </div>
+              
+            </div>
+           </div>
+           <div class="board-column">
+            <div class="columntitle">
+                Progress
+            </div>
+            <div class="tasks-container" cdkDropList
+      [cdkDropListData]="progress"
+      (cdkDropListDropped)="drop($event)">
+              <div *ngFor="let item of progress" class="task" cdkDrag>
+                    {{item}}
+                </div>
+            </div>
+           </div>
+           <div class="board-column">
+            <div class="columntitle">
+                In review
+            </div>
+            <div class="tasks-container" cdkDropList
+      [cdkDropListData]="inReview"
+      (cdkDropListDropped)="drop($event)">
+              <div *ngFor="let item of inReview" class="task" cdkDrag>
+                    {{item}}
+                </div>
+            </div>
+           </div>
+           <div class="board-column">
+            <div class="columntitle">
+                Done
+            </div>
+            <div class="tasks-container" cdkDropList
+      [cdkDropListData]="done"
+      (cdkDropListDropped)="drop($event)">
+              <div *ngFor="let item of done" class="task" cdkDrag>
+                    {{item}}
+                </div>
+            </div>
+           </div>
+        </div>
+    </div>
+  </div>
+</div>
